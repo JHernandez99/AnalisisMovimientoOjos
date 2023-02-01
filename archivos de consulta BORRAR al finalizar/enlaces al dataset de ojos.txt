@@ -1,3 +1,0 @@
-https://www.kaggle.com/datasets/dheerajperumandla/drowsiness-dataset?resource=download
-
-https://www.kaggle.com/code/adinishad/driver-drowsiness-using-keras/notebook
