@@ -9,7 +9,18 @@ def start():
 
         with dpg.group() as group1:
             dpg.add_text("Seleccionar Video",tag='txtSelVideo')
-            dpg.add_button(label="Seleccionar", tag='btnSel')
+            dpg.add_button(label="File Selector", callback=lambda: dpg.show_item("file_dialog_tag"), tag='btnSel')
+
+            def callback(sender, app_data):
+                print("Sender: ", sender)
+                print("App Data: ", app_data)
+                print(app_data)
+
+            with dpg.file_dialog(directory_selector=False, show=False, callback=callback, tag="file_dialog_tag"):
+                dpg.add_file_extension(".mp4", color=(150, 255, 150, 255))
+
+            #,width=10, height=20, pos=(0,0)
+
             #dpg.bind_item_theme(dpg.last_item(),dpg.mvThemeCol_Button)
             dpg.add_input_text(tag='ruta_video',label="RUTA", default_value="Ruta de video")
         with dpg.group() as group2:
